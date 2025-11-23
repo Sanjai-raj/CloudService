@@ -1,43 +1,48 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { CheckCircle2 } from "lucide-react";
 
 export function AboutSection() {
     return (
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-muted/30">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="lg:w-1/2">
-                        <div className="relative rounded-2xl overflow-hidden shadow-xl bg-muted aspect-video flex items-center justify-center">
-                            {/* Placeholder for an image - using a colored block for now */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-                            <span className="text-muted-foreground font-medium">Office Image Placeholder</span>
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl bg-background aspect-[4/3] flex items-center justify-center border">
+                            {/* Placeholder for an image */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+                            <div className="text-center z-10 p-6">
+                                <h3 className="text-4xl font-bold text-primary mb-2">10+</h3>
+                                <p className="font-medium text-muted-foreground">Years Experience</p>
+                            </div>
                         </div>
                     </div>
                     <div className="lg:w-1/2 space-y-6">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                            Rooted in Coimbatore, <br />
-                            <span className="text-primary">Serving the World</span>
-                        </h2>
+                        <h2 className="text-primary font-semibold mb-2 uppercase tracking-wider text-sm">About Us</h2>
+                        <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                            Your Trusted Partner for Modern IT & Digital Solutions
+                        </h3>
                         <p className="text-lg text-muted-foreground">
-                            Located in the heart of Coimbatore's tech hub, we bring world-class cloud infrastructure to local and global businesses. Our strategic location allows us to provide cost-effective solutions without compromising on quality or performance.
+                            CloudCoimbatore is a forward-thinking IT solutions company dedicated to helping businesses grow through modern technology, intelligent automation, and scalable digital solutions.
                         </p>
-                        <ul className="space-y-4">
-                            <li className="flex items-center gap-3">
-                                <div className="h-2 w-2 rounded-full bg-primary" />
-                                <span>24/7 Local Support Team</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <div className="h-2 w-2 rounded-full bg-primary" />
-                                <span>State-of-the-art Data Center Partnerships</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <div className="h-2 w-2 rounded-full bg-primary" />
-                                <span>Tailored Solutions for Indian Enterprises</span>
-                            </li>
-                        </ul>
-                        <Button variant="outline" asChild>
-                            <Link href="/contact">Visit Our Office</Link>
-                        </Button>
+                        <p className="text-muted-foreground">
+                            We specialize in software development, web applications, cloud solutions, and digital transformation services tailored to your unique business needs. Our skilled team focuses on delivering high-quality, reliable solutions.
+                        </p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            {["24/7 Support", "Professional Staff", "Fair Prices", "High Quality"].map((item, i) => (
+                                <div key={i} className="flex items-center gap-2">
+                                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                                    <span className="font-medium">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="pt-6">
+                            <Button size="lg" asChild>
+                                <Link href="/contact">Read More</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
